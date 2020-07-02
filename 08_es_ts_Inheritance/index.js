@@ -32,7 +32,7 @@ var SubTask = /** @class */ (function (_super) {
         return _this;
     }
     SubTask.prototype.complete = function () {
-        this.done = true;
+        _super.prototype.complete.call(this);
         console.log("task 2 done " + this.title + " ");
     };
     return SubTask;
@@ -45,3 +45,27 @@ console.log(subtask instanceof SubTask);
 console.log(subtask instanceof Task);
 task.complete();
 subtask.complete();
+var Car = /** @class */ (function () {
+    function Car() {
+        this.number = 2020;
+        this.color = 'red';
+    }
+    Car.prototype.getCarColor = function () {
+        return this.color;
+    };
+    return Car;
+}());
+var Hd = /** @class */ (function (_super) {
+    __extends(Hd, _super);
+    function Hd() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Hd.prototype.nameCuntry = function (name) {
+        console.log(name);
+    };
+    return Hd;
+}(Car));
+var car = new Hd();
+console.log(car);
+car.nameCuntry('blue');
+console.log(car.getCarColor());

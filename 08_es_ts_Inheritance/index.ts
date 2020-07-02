@@ -36,5 +36,29 @@ console.log(subtask instanceof SubTask);
 console.log(subtask instanceof Task);
 
 
+
 task.complete();
 subtask.complete();
+
+
+abstract class Car {
+    number: number = 2020;
+    color: string = 'red';
+
+    abstract nameCuntry(name: string): void;
+
+    getCarColor(): string {
+        return this.color;
+    }
+}
+
+class Hd extends Car {
+    nameCuntry(name: string): void {
+        console.log(name);
+    }
+}
+
+let car = new Hd();
+console.log(car);
+car.nameCuntry('blue');
+console.log(car.getCarColor());
