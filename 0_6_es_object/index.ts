@@ -1,63 +1,60 @@
-"use strict";
-let firsName = 'Billy';
-let lastName = 'Bonth';
+let firsName = "Billy";
+let lastName = "Bonth";
 
 let person = {
-    newfirsName: firsName,
-    newlastName: lastName,
-    //method
-    method () {
-        console.log(this.newfirsName);
-        console.log(`list- ${this.newlastName}`);
-    }
+  firsName,
+  lastName,
+
+  //method
+  method() {
+    console.log(this.firsName);
+    console.log(`list- ${this.lastName}`);
+  },
 };
 
-console.log(person.newfirsName);
+console.log(person.firsName);
 console.log(person);
 person.method();
 
-person.newfirsName = 'Billy 2';
-console.log(person.newfirsName);
+person.firsName = "Billy 2";
+console.log(person.firsName);
 
-person['newfirsName'] = 'firsName Billy 2';
-console.log( typeof person['newfirsName']);
-console.log(person.newfirsName);
+person["firsName"] = "firsName Billy 2";
+console.log(typeof person["firsName"]);
+console.log(person.firsName);
 
-let property = person.newfirsName;
+let property = person.firsName;
 console.log(`property - ${property}`);
 
-
-function D(property:any, value:any) {
-    return {
-        [property]: value,
-        ['_' + property]: value,
-        [property.toUpperCase()]: value,
-        ['get' + property]() {
-            return this[property]
-        }
-    };
+function D(property: any, value: any) {
+  return {
+    [property]: value,
+    ["_" + property]: value,
+    [property.toUpperCase()]: value,
+    ["get" + property]() {
+      return this[property];
+    },
+  };
 }
-console.log(D('qwerty33', 'ytrewq44'));
+console.log(D("qwerty33", "ytrewq44"));
 
-
-let firsName2 = 'Billy';
-let lastName2 = 'Bonth';
+let firsName2 = "Billy";
+let lastName2 = "Bonth";
 let person2 = {
-    firsName2,
-    lastName2,
-    //method
-    method2 () {
-        console.log(`list ${this.lastName2}`);
-    },
+  firsName2,
+  lastName2,
+  //method
+  method2() {
+    console.log(`list ${this.lastName2}`);
+  },
 
-    get fullName() {
-        return this.firsName2 + ' ' + this.lastName2
-    },
+  get fullName() {
+    return this.firsName2 + " " + this.lastName2;
+  },
 
-    set fullName(value) {
-        this.firsName2 = value;
-    }
-
+  set fullName(value) {
+    this.firsName2 = value;
+  },
 };
 
 console.log(person2);

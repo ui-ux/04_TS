@@ -1,12 +1,12 @@
-'use strict';
-
 let set = new Set();
-set.add('test1');
-set.add('test2');
+set.add("test1");
+set.add("test1");
+set.add("test2");
+console.log("typeof(set) " + typeof set);
 console.log(set);
 console.log(set.size);
 
-let set2 = new Set([1,2,3,4,4,5,5,7,0,0,1]);
+let set2 = new Set([1, 2, 3, 4, 4, 5, 5, 7, 0, 0, 1]);
 console.log(set2);
 console.log(set2.size);
 
@@ -16,9 +16,10 @@ console.log(set3.size);
 console.log(set3.has(1));
 console.log(set3.delete(3));
 console.log(set3);
-console.log(set3.clear(3));
+console.log(set3.clear());
 console.log(set3);
 
+console.log("WeakSet____________________________");
 let set4 = new WeakSet();
 let key1 = {};
 set4.add(key1);
@@ -34,26 +35,27 @@ key2 = null;
 console.log(set5.size);
 
 let map = new Map();
-map.set('name', 'Bill');
-map.set('sname', 'Bonth');
+map.set("name", "Bill");
+map.set("sname", "Bonth");
 
 console.log(map);
 console.log(map.size);
-console.log(map.get('name'));
+console.log(map.get("name"));
 
 let obj1 = {};
 let obj2 = {};
-map.set(obj1, 'Pyu');
-map.set(obj2, 'Polson');
+map.set(obj1, "Pyu");
+map.set(obj2, "Polson");
 console.log(map);
 console.log(map.size);
 console.log(map.has(obj2));
-console.log(map.delete('sname'));
+console.log(map.delete("sname"));
 console.log(map.size);
 
+// Arr
 let mapArr = new Map([
-    ['name2', 'Bill2'],
-    ['sname2', 'Bonth2']
+  ["name2", "Bill2"],
+  ["sname2", "Bonth2"],
 ]);
 console.log(mapArr);
 
@@ -64,3 +66,9 @@ console.log(vals);
 console.log(keyN);
 console.log(ent);
 
+// let mapW = new WeakMap();
+// let keyW = {};
+// mapW.set(keyM, "key");
+// console.log(mapW.size);
+// keyW = null;
+// console.log(mapW.size);

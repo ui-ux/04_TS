@@ -1,64 +1,53 @@
+// Enum
 enum Job {
-    Frontend,
-    Backend,
-    Designer
+  Frontend,
+  Backend,
+  Designer = 33,
+  Designer2,
 }
 
-const job: Job = Job.Backend;
-console.log(job);
+const jobB: Job = Job.Backend;
+console.log("Job.Backend = " + jobB);
+
+const jobD: Job = Job.Designer;
+console.log("Job.Backend = " + jobD);
+
+const jobD2: Job = Job.Designer2;
+console.log("Job.Backend = " + jobD2);
 
 for (let a in Job) {
-    console.log(a);
+  console.log(a);
 }
-
-const object1 = {
-    a: 'somestring',
-    b: 42,
-    c: false
-  };
-  
-  console.log(Object.values(object1));
-
-for (let b in object1) {
-    console.log(b);
-}
-
-for (let b in object1) {
-    console.log(object1[b]);
-}
-
 
 const enum Directions {
-    Up,
-    Down
+  Up,
+  Down,
 }
 
 function someFunc(op: Directions) {
-    switch (op) {
-        case Directions.Up:
-            console.log(Directions.Up);
-        break;
-        case Directions.Down:
-            console.log(Directions.Down);
-        break;
-        default:
-        console.log(op + ' default');
-    }
+  switch (op) {
+    case Directions.Up:
+      console.log(Directions.Up);
+      break;
+    case Directions.Down:
+      console.log(Directions.Down);
+      break;
+    default:
+      console.log(op + " default");
+  }
 }
 someFunc(0);
 someFunc(1);
 someFunc(2);
 
+// never
+function throwNewError(err: string): never {
+  throw new Error(err);
+}
 
+// null
+let newVar;
+newVar = null;
 
-  // never
-
-  function throwNewError(err: string): never {
-    throw new Error(err)
-  }
-
-  let newVar;
-  newVar = null;
-
-  let mynNumber: number | null = 20;
-  mynNumber = null;
+let myNumber: number | null = 20;
+myNumber = null;

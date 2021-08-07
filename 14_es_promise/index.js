@@ -1,34 +1,26 @@
-// function oldDelay(ms, func) {
-//     setTimeout(function () {
-//         func();
-//     }, ms);
+// function oldDelay(ms: any, func: any) {
+//   setTimeout(function () {
+//     func();
+//   }, ms);
 // }
 // oldDelay(3000, function () {
-//     console.log('text');
+//   console.log("text");
 // });
-// function oldDelay(ms:any, func:any) {
-//     setTimeout(() => {
-//         func();
-//     }, ms);
-// }
-// oldDelay(3000, function() {
-//     console.log('text 2');
-// })
-// function delay(ms = 1000) {
-//     return new Promise ((resolve, reject) => {
-//     setTimeout(() => {
-//         resolve();
-//         //reject();
-//     }, ms);
-//     });
-// }
-// delay(4000)
-//     .then(() => {
-//         console.log('new promise');
-//     })
-//     .catch(() => {
-//         console.log('error');
-//     })
+function delay(ms) {
+    if (ms === void 0) { ms = 1000; }
+    return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            resolve();
+            //reject();
+        }, ms);
+    });
+}
+delay(4000)
+    .then(function () {
+    console.log("new promise");
+})["catch"](function () {
+    console.log("error");
+});
 window.onload = function () {
     document.getElementById("btnGet").onclick = function () {
         var promise = new Promise(function (resolve, reject) {
@@ -38,6 +30,7 @@ window.onload = function () {
                 if (xhr.readyState == 4) {
                     if (xhr.status == 200) {
                         return resolve(response);
+                        // or return resolve(response.type);
                     }
                     else {
                         return reject(new Error(error));
@@ -48,9 +41,9 @@ window.onload = function () {
         });
         promise
             .then(function (data) {
-            console.log('Success', data);
+            console.log("Success", data);
         })["catch"](function (error) {
-            console.log('Error', error);
+            console.log("Error", error);
         });
     };
 };

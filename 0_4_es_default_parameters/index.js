@@ -1,13 +1,38 @@
+// Outdated implementation
+// const f = (a: number | string) => {
+//   a = a || 10;
+//   return "Hello = " + a;
+// };
+// console.log(f());
+// ===============================
 // default parameters
+var b;
+var f2 = function (b) {
+    if (b === void 0) { b = 99; }
+    return "Hello = " + b;
+};
+console.log(f2());
+var first;
+var second;
+var third = function () { return 0.03; };
+var sumAll = function (first, second) {
+    if (first === void 0) { first = 20; }
+    if (second === void 0) { second = 10 + third(); }
+    return first + second;
+};
+console.log(sumAll(5));
+console.log(sumAll(1, 2));
+console.log(sumAll(undefined, 2));
 var greeting;
 var sname;
-function greet(greeting, sname) {
-    if (greeting === void 0) { greeting = 'Hello'; }
-    if (sname === void 0) { sname = 'Person_name'; }
+var greet = function (greeting, sname) {
+    if (greeting === void 0) { greeting = "Hello"; }
+    if (sname === void 0) { sname = "Person_name"; }
     console.log(greeting + " " + sname);
-}
-greet('Hay', 'Poll');
+};
+greet("Hay", "Poll");
 greet();
+// ===============================
 // rest parameters
 // ES5
 // function sum(): void {

@@ -1,25 +1,19 @@
+// Enum
 var Job;
 (function (Job) {
     Job[Job["Frontend"] = 0] = "Frontend";
     Job[Job["Backend"] = 1] = "Backend";
-    Job[Job["Designer"] = 2] = "Designer";
+    Job[Job["Designer"] = 33] = "Designer";
+    Job[Job["Designer2"] = 34] = "Designer2";
 })(Job || (Job = {}));
-var job = Job.Backend;
-console.log(job);
+var jobB = Job.Backend;
+console.log("Job.Backend = " + jobB);
+var jobD = Job.Designer;
+console.log("Job.Backend = " + jobD);
+var jobD2 = Job.Designer2;
+console.log("Job.Backend = " + jobD2);
 for (var a in Job) {
     console.log(a);
-}
-var object1 = {
-    a: 'somestring',
-    b: 42,
-    c: false
-};
-console.log(Object.values(object1));
-for (var b in object1) {
-    console.log(b);
-}
-for (var b in object1) {
-    console.log(object1[b]);
 }
 function someFunc(op) {
     switch (op) {
@@ -30,7 +24,7 @@ function someFunc(op) {
             console.log(1 /* Down */);
             break;
         default:
-            console.log(op + ' default');
+            console.log(op + " default");
     }
 }
 someFunc(0);
@@ -40,7 +34,8 @@ someFunc(2);
 function throwNewError(err) {
     throw new Error(err);
 }
+// null
 var newVar;
 newVar = null;
-var mynNumber = 20;
-mynNumber = null;
+var myNumber = 20;
+myNumber = null;

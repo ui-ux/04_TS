@@ -15,17 +15,17 @@ var User = /** @class */ (function () {
     function User(name, age) {
         this.name = name;
         this.age = age;
-        console.log('text 1');
+        console.log("text 1");
     }
     User = __decorate([
         shouldLog(true)
     ], User);
     return User;
 }());
-/////////////////
+//=========================================
 function addShow(constrFn) {
     constrFn.prototype.showTeg = function () {
-        var pre = document.createElement('pre');
+        var pre = document.createElement("pre");
         pre.innerHTML = JSON.stringify(this);
         document.body.appendChild(pre);
     };
@@ -34,13 +34,13 @@ var User2 = /** @class */ (function () {
     function User2(name, age) {
         this.name = name;
         this.age = age;
-        console.log('text 1');
+        console.log("text 2222222222");
     }
     User2 = __decorate([
         addShow
     ], User2);
     return User2;
 }());
-var user2 = new User2('Billy', 99);
+var user2 = new User2("Billy", 99);
 console.log(user2);
 user2.showTeg();

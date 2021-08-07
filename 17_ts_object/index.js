@@ -1,24 +1,25 @@
 var user = {
-    name: 'Name',
+    name: "Name",
     age: 50,
-    arr: ['a', 'b'],
+    arr: ["a", "b"],
     logName: function () {
         console.log(this.name);
     }
 };
-//  logName2? <-
+//  logName2?
+//  optional field / method
 var user2 = {
-    name: 'Name',
+    name: "Name",
     age: 50,
-    arr: ['a', 'b'],
+    arr: ["a", "b"],
     logName: function () {
         console.log(this.name);
     }
 };
 var user3 = {
-    name: 'Name',
+    name: "Name",
     age: 50,
-    arr: ['a', 'b'],
+    arr: ["a", "b"],
     logName: function () {
         console.log(this.name);
     },

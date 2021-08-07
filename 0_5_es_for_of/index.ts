@@ -1,18 +1,25 @@
-let as = ['Wer 1','Wer 2','Wer 3','Wer 4'];
+let arr = ["Wer 1", "Wer 2", "Wer 3", "Wer 4"];
 
-for (let a in as) {
-    console.log(a);
+for (let i = 0; i < arr.length; i++) {
+  console.log(i + " = " + arr[i]);
 }
 
-for (let a in as) {
-    console.log(as[a]);
+// in
+for (let a in arr) {
+  console.log(a);
 }
 
-as.forEach(element => console.log(element));
-
-console.log(as);
-
-for (let s of as) {
-    console.log(s);
+for (let a in arr) {
+  console.log(arr[a]);
 }
-console.log(as);
+
+arr.forEach((element) => console.log(element));
+
+// of
+for (let s of arr) {
+  console.log(s);
+}
+
+for (let s of "string") {
+  console.log(s);
+}
