@@ -26,3 +26,5 @@ for (let a = 0; a < 5; a++) {
     console.log(`let a ${a}`);
   }, 2000);
 }
+
+console.log("1111111111");

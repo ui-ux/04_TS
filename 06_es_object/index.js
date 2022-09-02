@@ -1,3 +1,4 @@
+var _a;
 var firsName = "Billy";
 var lastName = "Bonth";
 var person = {
@@ -6,7 +7,7 @@ var person = {
     //method
     method: function () {
         console.log(this.firsName);
-        console.log("list- " + this.lastName);
+        console.log("list- ".concat(this.lastName));
     }
 };
 console.log(person.firsName);
@@ -18,7 +19,7 @@ person["firsName"] = "firsName Billy 2";
 console.log(typeof person["firsName"]);
 console.log(person.firsName);
 var property = person.firsName;
-console.log("property - " + property);
+console.log("property - ".concat(property));
 function D(property, value) {
     var _a;
     return _a = {},
@@ -38,7 +39,7 @@ var person2 = {
     lastName2: lastName2,
     //method
     method2: function () {
-        console.log("list " + this.lastName2);
+        console.log("list ".concat(this.lastName2));
     },
     get fullName() {
         return this.firsName2 + " " + this.lastName2;
@@ -48,3 +49,8 @@ var person2 = {
     }
 };
 console.log(person2);
+// ES2020
+var abc = { b: { b1: "123" } };
+console.log(abc.b.b1); // => 123
+var abcd = { b: {} };
+console.log((_a = abcd.b) === null || _a === void 0 ? void 0 : _a.b1); // => undefined

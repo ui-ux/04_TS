@@ -58,3 +58,9 @@ let person2 = {
 };
 
 console.log(person2);
+
+// ES2020
+let abc = { b: { b1: "123" } };
+console.log(abc.b.b1); // => 123
+let abcd = { b: {} };
+console.log(abcd.b?.b1); // => undefined
